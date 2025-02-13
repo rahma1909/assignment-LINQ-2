@@ -80,6 +80,55 @@ namespace assignment
 
 
             #endregion
+
+            #region LINQ - Aggregate Operators
+
+            #region 1. Uses Count to get the number of odd numbers in the array
+
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var res = Arr.Where(n => n % 2 == 1).Count();
+            //Console.WriteLine(res);//5
+
+            #endregion
+
+            #region 2. Return a list of customers and how many orders each has.
+            //var res = CustomerList.Where(c => c.Orders.Count() > 0).Select(c=>new
+            //{
+            //    customer = c,
+            //    ordercount=c.Orders.Count()
+            //});
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region 3. Return a list of categories and how many products each has
+
+            //var res = ProductList.Select(c => new
+            //{
+            //    cat = c.Category,
+            //    numOfproducts = c.ProductID
+            //});
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 4. Get the total of the numbers in an array.
+
+
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var res = Arr.Sum();
+            //Console.WriteLine(res);
+            #endregion
+            #endregion
         }
     }
 }
