@@ -7,6 +7,38 @@ using System.Xml.Linq;
 
 namespace assignment
 {
+    class unitpriceComparer : IComparer<decimal>
+    {
+        public int Compare(decimal x, decimal y)
+        {
+            return x.CompareTo(y);
+        }
+    }
+    class categoryComparer : IComparer<string>
+    {
+        public int Compare(string? x, string? y)
+        {
+            return x.CompareTo(y);
+        }
+    }
+
+    class namecomparer : IComparer<string>
+    {
+        public int Compare(string? x, string? y)
+        {
+           return x.CompareTo(y);
+        }
+    }
+
+    class unitsinstockComparer : IComparer<int>
+    {
+        
+
+        public int Compare(int x, int y)
+        {
+         return   x.CompareTo(y);
+        }
+    }
     class Product
     {
         public long ProductID { get; set; }
@@ -16,9 +48,12 @@ namespace assignment
         public int UnitsInStock { get; set; }
 
 
+     
+
         public override string ToString()
             => $"ProductID:{ProductID},ProductName:{ProductName},Category{Category},UnitPrice:{UnitPrice},UnitsInStock:{UnitsInStock}";
 
+      
     }
     class Customer
     {
