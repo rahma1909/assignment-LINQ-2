@@ -1,5 +1,6 @@
 ﻿using System.Data.Common;
 using System.Diagnostics;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -462,7 +463,7 @@ namespace assignment
 
             #region 6. Select all orders where the order total is less than 500.00.
 
-            //var res = CustomerList.SelectMany(o => o.Orders).Where(o=>o.Total<500.00M);
+            //var res = CustomerList.SelectMany(o => o.Orders).Where(p=>p.Total<500.00M);
 
 
             //foreach (var item in res)
@@ -471,11 +472,43 @@ namespace assignment
             //}
 
 
+            #endregion
+            #endregion
+
+            #region LINQ - Set Operators
+
+            #region 1. Find the unique Category names from Product List
+
+
+            //var res = (from p in ProductList
+            //           select p.Category).Distinct();
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             #endregion
 
-            #region 7. Select all orders where the order was made in 1998 or later.
-            //var res = CustomerList.SelectMany(o => o.Orders).Where(o => o.OrderDate>=new DateTime(1998,1,1));
+            #region 2. Produce a Sequence containing the unique first letter from both product and customer names.
+
+            //var res = (from p in ProductList
+            //           select p.ProductName.ElementAt(0)).Distinct().Union((from c in CustomerList
+            //                                                                select c.CustomerName.ElementAt(0)).Distinct());
+
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);  
+            //}
+
+            #endregion
+
+            #region 3. Create one sequence that contains the common first letter from both product and customer names.
+            //var res = (from p in ProductList
+            //           select p.ProductName.ElementAt(0)).Distinct().Intersect((from c in CustomerList
+            //                                                                select c.CustomerName.ElementAt(0)).Distinct());
+
 
 
             //foreach (var item in res)
@@ -485,9 +518,45 @@ namespace assignment
 
             #endregion
 
-          
+            #region  4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+            //var res = (from p in ProductList
+            //           select p.ProductName.ElementAt(0)).Distinct().Except((from c in CustomerList
+            //                                                                    select c.CustomerName.ElementAt(0)).Distinct());
+
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
             #endregion
 
+            #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
+
+            //var res = (from p in ProductList
+            //           select p.ProductName.Skip((p.ProductName.Length) - 3))
+            //           .Concat(from c in CustomerList
+            //                   select c.CustomerName.Skip((c.CustomerName.Length)-3)).SelectMany(x=>x);
+
+
+
+            //var res = (from p in ProductList
+            //           select p.ProductName.Substring((p.ProductName.Length) - 3))
+            //           .Concat(from c in CustomerList
+            //                   select c.CustomerName.Substring((c.CustomerName.Length) - 3));
+
+            //foreach (var item in res)
+            //{
+            //    Console.Write(item);
+            //    Console.WriteLine();
+            //}
+            #endregion
+
+
+
+            #endregion
 
 
         }
