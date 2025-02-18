@@ -558,6 +558,64 @@ namespace assignment
 
             #endregion
 
+            #region LINQ - Partitioning Operators
+
+
+            #region 1. Get the first 3 orders from customers in Washington
+            //var res = CustomerList.Where(o => o.Address == "Washington").SelectMany(o => o.Orders).Take(3);
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 2.Get all but the first 2 orders from customers in Washington.
+
+            //var res = CustomerList.Where(o => o.Country == "Washington").SelectMany(o => o.Orders).Skip(2);
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 3. Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var res = numbers.TakeWhile((a, I) => a >= I);
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region 4.Get the elements of the array starting from the first element divisible by 3.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+
+            //var res = numbers.TakeWhile(a=> a%3!=0);
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 5. Get the elements of the array starting from the first element less than its position.
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var res = numbers.SkipWhile((a, I) =>a>=I);
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+            #endregion
+
 
         }
     }
