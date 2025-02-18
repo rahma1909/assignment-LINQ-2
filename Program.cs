@@ -17,7 +17,7 @@ namespace assignment
     {
         public int Compare(int x, int y)
         {
-           return x.CompareTo(y);
+            return x.CompareTo(y);
         }
     }
     internal class Program
@@ -377,6 +377,115 @@ namespace assignment
             //}
             #endregion
 
+            #endregion
+
+            #region LINQ – Transformation Operators
+
+            #region 1. Return a sequence of just the names of a list of products.
+            //var res = from p in ProductList
+            //          select p.ProductName;
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 2. Produce a sequence of the uppercase and lowercase versions of each word in the original array (Anonymous Types).
+
+            //string[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+
+            //var res = words.Select(p => new
+            //{
+            //    up = p.ToUpper(),
+            //    lo = p.ToLower()
+            //});
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 3. Produce a sequence containing some properties of Products, including UnitPrice which is renamed to Price in the resulting type.
+
+            //var res = ProductList.Select(p => new
+            //{
+            //    category=p.Category,
+            //    price=p.UnitPrice
+            //});
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region 4. Determine if the value of int in an array matches their position in the array.
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //indexed select
+            //var res = Arr.Select((n,I) => new
+            //{
+            //    number = n,
+            //    inplace = n == I
+            //});
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 5. Returns all pairs of numbers from both arrays such that the number from numbersA is less than the number from numbersB.
+
+            //int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            //int[] numbersB = { 1, 3, 5, 7, 8 };
+
+            ////query expression
+            //var res = from a in numbersA
+            //          from b in numbersB
+            //          where a < b
+            //          select (a, b);
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region 6. Select all orders where the order total is less than 500.00.
+
+            //var res = CustomerList.SelectMany(o => o.Orders).Where(o=>o.Total<500.00M);
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            #endregion
+
+            #region 7. Select all orders where the order was made in 1998 or later.
+            //var res = CustomerList.SelectMany(o => o.Orders).Where(o => o.OrderDate>=new DateTime(1998,1,1));
+
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+          
             #endregion
 
 
