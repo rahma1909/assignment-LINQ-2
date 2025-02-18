@@ -616,6 +616,48 @@ namespace assignment
             #endregion
             #endregion
 
+            #region LINQ - Quantifiers
+
+
+            #region 1. Determine if any of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First) contain the substring 'ei'.
+
+            //string[] dictionaryWords = File.ReadAllLines("dictionary_english.txt");
+
+            //var res = dictionaryWords.Any(a=>a.Contains("ei"));
+            //Console.WriteLine(res);
+            #endregion
+
+            #region 2. Return a grouped a list of products only for categories that have at least one product that is out of stock.
+
+            //var res = ProductList.GroupBy(a => a.Category)
+            //    .Where(a => a.Any(x => x.UnitsInStock == 0))
+            //    .ToList();
+            //foreach (var item in res)
+            //{
+            //    foreach (var item1 in item)
+            //    {
+            //        Console.WriteLine(item1.ProductName);
+            //    }
+
+            //}
+            #endregion
+
+            #region 3. Return a grouped a list of products only for categories that have all of their products in stock.
+
+            //var res = ProductList.GroupBy(a => a.Category)
+            //    .Where(a => a.All(x => x.UnitsInStock > 0))
+            //    .ToList();
+            //foreach (var item in res)
+            //{
+            //    foreach (var item1 in item)
+            //    {
+            //        Console.WriteLine(item1.ProductName);
+            //    }
+
+            //}
+            #endregion
+            #endregion
+
 
         }
     }
