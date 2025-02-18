@@ -1,5 +1,7 @@
-﻿using System.Data.Common;
+﻿using System.Collections.Generic;
+using System.Data.Common;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -7,6 +9,20 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using static assignment.ListGenerators;
 namespace assignment
 {
+
+    class stringequalitycomparer : IEqualityComparer<string>
+    {
+        public bool Equals(string? x, string? y)
+        {
+            return x.Equals(y);
+        }
+
+        public int GetHashCode([DisallowNull] string obj)
+        {
+
+            return obj.GetHashCode();
+        }
+    }
     class stringcomparer : IComparer<string>
     {
         public int Compare(string? x, string? y)
@@ -654,6 +670,63 @@ namespace assignment
             //        Console.WriteLine(item1.ProductName);
             //    }
 
+            //}
+            #endregion
+            #endregion
+
+            #region LINQ – Grouping Operators
+
+
+            #region ⦁	Use group by to partition a list of numbers by their remainder when divided by 5
+
+            //List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+
+            //var res = numbers.GroupBy(a => a % 5);
+
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine($"Nums  with a reminder {item.Key} when divided by 5");
+            //    foreach (var item1 in item)
+            //    {
+            //        Console.WriteLine(item1);
+            //    }
+
+            //}
+
+            #endregion
+
+            #region ⦁	Uses group by to partition a list of words by their first letter.Use dictionary_english.txt for Input
+
+            //string filePath = "dictionary_english.txt";
+
+            //string[] dictionaryWords = File.ReadAllLines(filePath);
+            //var res = dictionaryWords.GroupBy(a => a[0]);
+            //foreach (var item in res)
+            //{
+
+            //    Console.WriteLine(item.Key);
+            //    foreach (var item1 in item)
+            //    {
+
+            //        Console.WriteLine(item1);
+            //    }
+            //}
+
+            #endregion
+
+            #region Use Group By with a custom comparer that matches words that are consists of the same Characters Together
+            /*workshop*/
+            //string[] Arr = { "from", "salt", "earn", " last", "near", "form" };
+
+            //var res = Arr.GroupBy(a => a, new stringequalitycomparer());
+            //foreach (var group in res)
+            //{
+            //    Console.WriteLine($"Group: {group.Key}"); 
+            //    foreach (var word in group)
+            //    {
+            //        Console.WriteLine(word); 
+            //    }
+            //    Console.WriteLine(); 
             //}
             #endregion
             #endregion
